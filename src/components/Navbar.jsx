@@ -13,11 +13,11 @@ function Navbar() {
 
   const navItems = (
     <>
-      <li><a href="/">Home</a></li>
-      <li><a href="/course">Course</a></li>
-      <li><a href="/contact">Contact</a></li>
-      <li><a href="/about">About</a></li>
-    </>
+    <li><a href="/" className="text-lg font-bold">Home</a></li>
+    <li><a href="/course" className="text-lg font-bold">Course</a></li>
+    <li><a href="/contact" className="text-lg font-bold">Contact</a></li>
+    <li><a href="/about" className="text-lg font-bold">About</a></li>
+  </>
   );
 
   return (
