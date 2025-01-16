@@ -11,8 +11,9 @@ function Course() {
     const getBook = async () => {
       try {
         const res = await axios.get("http://127.0.0.1:4001/book");
-        console.log(res.data);
-        setBook(res.data);
+        //console.log(res.data);
+        const data = res.data.filter((data) => data.category !== "Free");
+        setBook(data);
       } catch (error) {
         console.log(error);
       }
