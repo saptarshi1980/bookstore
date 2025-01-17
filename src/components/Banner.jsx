@@ -3,16 +3,16 @@ import banner from '../../public/banner1.jpeg';
 
 function Banner() {
     return (
-        <>
-            <div className='max-w-screen-2xl container mx-auto md:px-20 px-4 flex'>
+        <> <br></br>
+            <div className='max-w-screen-2xl container mx-auto md:px-20 px-4 flex mt-5'>
                 <div className='w-full'><br></br><br></br><br></br>
                     <div className='space-y-10'>
                         <h1 className='text-4xl font-bold'>
-                            Welcome to NSMH Book Store App. Learn something {" "}
+                            Welcome to Book Bazar ! Learn something {" "}
                             <span className='text-pink-500'>new everyday!!</span>
                         </h1>
                         <div>
-                            <h6 className='text-2xl font-bold text-justify'>Welcome to our bookstore, where stories come to life! Whether you're an avid reader or a casual book lover, we offer a wide selection of books across genres—fiction, non-fiction, mystery, romance, and more. Explore our collection of bestsellers, new releases, and timeless classics. We believe that every book opens a new door, ignites creativity, and nurtures the mind. Browse, shop, and enjoy seamless delivery right to your doorstep. Your literary adventure starts here</h6>
+                            <h6 className='text-2xl font-bold text-justify'>Welcome to Book Bazar, where stories come to life! Whether you're an avid reader or a casual book lover, we offer a wide selection of books across genres—fiction, non-fiction, mystery, romance, and more. Explore our collection of bestsellers, new releases, and timeless classics. We believe that every book opens a new door, ignites creativity, and nurtures the mind. Browse, shop, and enjoy seamless delivery right to your doorstep. Your literary adventure starts here</h6>
                             </div>
 
                         <label className="input input-bordered flex items-center gap-2">
