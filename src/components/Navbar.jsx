@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Login from './Login';
+import { useAuth } from "../context/AuthProvider";
+import Logout from "./Logout";
 
 function Navbar() {
+  const [authUser, setAuthUser] = useAuth();
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  );
 
   const [sticky, setSticky] = useState(false);
   useEffect(() => {
@@ -63,9 +69,26 @@ function Navbar() {
               <path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" />
             </svg>
           </label>
-          <div>
+          
+          {authUser ? (
+              <Logout />
+            ) : (
+              <div className="">
+                <a
+                  className="bg-black text-white px-3 py-2 rounded-md hover:bg-slate-800 duration-300 cursor-pointer"
+                  onClick={() =>
+                    document.getElementById("my_modal_3").showModal()
+                  }
+                >
+                  Login
+                </a>
+                <Login />
+              </div>
+            )}         
+          
+          {/*<div> 
             <a className="bg-white text-black px-5 py-3 rounded-md hover:bg-slate-800 duration-300 cursor-pointer" onClick={()=>document.getElementById('my_modal_3').showModal()}>Login</a> <Login />
-          </div>
+          </div>*/}
         </div>
       </div>
     </div>

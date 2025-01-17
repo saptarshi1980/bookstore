@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-
+import axios from "axios";
+import toast from "react-hot-toast";
 function Login() {
 
     const {
@@ -11,8 +12,35 @@ function Login() {
         formState: { errors },
     } = useForm()
 
+    const onSubmit = async (data) => {
+        const userInfo = {
+          email: data.email,
+          password: data.password,
+        };
+        await axios
+          .post("http://127.0.0.1:4001/user/login", userInfo)
+          .then((res) => {
+            console.log(res.data);
+            if (res.data) {
+              toast.success("Loggedin Successfully");
+              document.getElementById("my_modal_3").close();
+              setTimeout(() => {
+                window.location.reload();
+                localStorage.setItem("Users", JSON.stringify(res.data.user));
+              }, 1000);
+            }
+          })
+          .catch((err) => {
+            if (err.response) {
+              console.log(err);
+              toast.error("Error: " + err.response.data.message);
+              setTimeout(() => {}, 2000);
+            }
+          });
+      };
+
     console.log("Inside login");
-    const onSubmit = (data) => console.log(data);
+    //const onSubmit = (data) => console.log(data);
     return (
         <div>
             <dialog id="my_modal_3" className="modal">
@@ -63,7 +91,7 @@ function Login() {
                             <button className="bg-pink-500 text-white rounded-md px-3 py-1 hover:bg-pink-700 duration-200">
                                 Login
                             </button>
-                            <p>
+                            <div>
                                 Not registered?
                                 <Link
                                     to="/signup"
@@ -72,7 +100,7 @@ function Login() {
                                     Signup
                                 </Link>{" "}
 
-                            </p>
+                            </div>
                         </div>
                     </form>
                 </div>

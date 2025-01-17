@@ -79,8 +79,8 @@ function Course() {
           </Link>
         </div>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-4">
-          {book.map((item) => (
-            <Cards key={item.id} item={item} />
+          {book.map((item,index) => (
+            <Cards key={item.id || index} item={item} />
           ))}
         </div>
       </div>
