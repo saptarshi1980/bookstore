@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Login from './Login';
 import { useAuth } from "../context/AuthProvider";
 import Logout from "./Logout";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [authUser, setAuthUser] = useAuth();
@@ -22,8 +23,8 @@ function Navbar() {
     <>
       <li><a href="/" className="text-lg font-bold">Home</a></li>
       <li><a href="/course" className="text-lg font-bold">Course</a></li>
-      <li><a href="/contact" className="text-lg font-bold">Contact</a></li>
-      <li><a href="/about" className="text-lg font-bold">About</a></li>
+      <li><Link to="/contact" className="text-lg font-bold">Contact</Link></li>
+      <li><Link to="/about" className="text-lg font-bold">About</Link></li>
     </>
   );
 
@@ -43,8 +44,8 @@ function Navbar() {
             <ul className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
               <li><a href="/" className="text-lg font-bold">Home</a></li>
               <li><a href="/course" className="text-lg font-bold">Course</a></li>
-              <li><a href="/contact" className="text-lg font-bold">Contact</a></li>
-              <li><a href="/about" className="text-lg font-bold">About</a></li>
+              <li><Link to="/contact" className="text-lg font-bold">Contact</Link></li>
+              <li><Link to="/about" className="text-lg font-bold">About</Link></li>
             </ul>
           </div>
           <a className="text-2xl font-bold"><span className='text-pink-500'>Book Bazar</span></a>
