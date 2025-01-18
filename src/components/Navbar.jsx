@@ -70,7 +70,7 @@ function Navbar() {
           ) : (
             <div className="">
               <a
-                className="bg-black text-white px-3 py-2 rounded-md hover:bg-slate-800 duration-300 cursor-pointer"
+                className="bg-pink-500 text-white px-5 py-3 text-lg font-bold rounded-md hover:bg-slate-800 duration-300 cursor-pointer"
                 onClick={() =>
                   document.getElementById("my_modal_3").showModal()
                 }
